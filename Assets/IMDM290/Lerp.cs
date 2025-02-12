@@ -35,7 +35,7 @@ public class Lerp0 : MonoBehaviour
 
             r = 25f; // radius of the circle
             // Circular end position
-            endPosition[i] = new Vector3( Mathf.Sqrt(2) * Mathf.Pow(Mathf.Sin(i * 2 * Mathf.PI / numSphere), 3), Mathf.Pow(-Mathf.Cos(i * 2 * Mathf.PI / numSphere), 3) - 2f * Mathf.Pow(Mathf.Cos(i * 2 * Mathf.PI / numSphere), 2) + 2 * Mathf.Cos(i * 2 * Mathf.PI / numSphere), 7f);
+            endPosition[i] = new Vector3( 5f * Mathf.Sqrt(2) * Mathf.Pow(Mathf.Sin(i * 2 * Mathf.PI / numSphere), 3), 5f * Mathf.Pow(-Mathf.Cos(i * 2 * Mathf.PI / numSphere), 3) - 2f * Mathf.Pow(Mathf.Cos(i * 2 * Mathf.PI / numSphere), 2) + Mathf.Cos(i * 2 * Mathf.PI / numSphere), 9f);
         }
         // Let there be spheres..
         for (int i =0; i < numSphere; i++){
@@ -81,7 +81,7 @@ public class Lerp0 : MonoBehaviour
             // Color Update over time
             Renderer sphereRenderer = spheres[i].GetComponent<Renderer>();
             float hue = (float)i / numSphere; // Hue cycles through 0 to 1
-            Color color = Color.HSVToRGB(Mathf.Abs(0.88f), 0.33f * Mathf.Cos(time), 0.2f * 5f + Mathf.Cos(time)); // Full saturation and brightness
+            Color color = Color.HSVToRGB(Mathf.Abs(0.88f), 0.33f * Mathf.Cos(time), 0.2f * 3f + Mathf.Cos(time)); // Full saturation and brightness
             sphereRenderer.material.color = color;
         }
     }
